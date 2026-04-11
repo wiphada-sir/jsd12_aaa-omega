@@ -1,4 +1,5 @@
 /*! tailwindcss v4.2.2 | MIT License | https://tailwindcss.com */
+@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -6,13 +7,15 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-400: oklch(70.4% 0.191 22.216);
-    --color-red-800: oklch(44.4% 0.177 26.899);
-    --color-green-700: oklch(52.7% 0.154 150.069);
-    --spacing: 0.25rem;
+    --color-amber-50: oklch(98.7% 0.022 95.277);
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-primary-500: #00a6f4;
+    --font-kanit: "Kanit", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --color-primary-base: #7f8dd1;
+    --color-neutral-base: oklch(70.4% 0.04 256.788);
   }
 }
 @layer base {
@@ -164,24 +167,72 @@
   }
 }
 @layer utilities {
-  .text-primary-500 {
-    color: var(--color-primary-500);
+  .table {
+    display: table;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .bg-neutral-base {
+    background-color: var(--color-neutral-base);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
+  .text-primary-base {
+    color: var(--color-primary-base);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
 }
 @layer base {
-  input::placeholder, textarea::placeholder {
-    color: var(--color-red-400);
+  body {
+    font-family: var(--font-kanit);
   }
-  input, textarea {
-    color: var(--color-red-800);
+  img {
+    border-style: var(--tw-border-style);
+    border-width: 8px;
+    background-color: var(--color-amber-50);
   }
 }
-@layer components {
-  a {
-    color: var(--color-green-700);
-  }
-  .button {
-    background-color: var(--color-green-700);
-    padding: calc(var(--spacing) * 4);
+@layer components;
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+      --tw-font-weight: initial;
+      --tw-outline-style: solid;
+    }
   }
 }
