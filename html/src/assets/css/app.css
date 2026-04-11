@@ -494,6 +494,9 @@
     padding-inline: calc(var(--spacing) * 5);
     padding-block: calc(var(--spacing) * 3);
   }
+  table thead tr:first-child :is(th, td) {
+    padding-top: calc(var(--spacing) * 0);
+  }
   table :is(th, td):first-child {
     padding-left: calc(var(--spacing) * 0);
   }
