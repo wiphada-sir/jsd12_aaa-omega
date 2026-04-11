@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AAA Omega Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./src/assets/css/app.css" />
+  </head>
+  <body class="dashboard flex-col">
+    <header class="min-w-[200px] bg-neutral-base">
+      <nav class="h-full flex flex-col justify-between">
+        <a class="aside-logo" href="./dashboard-home.html">LOGO</a>
+        <ul id="nav-main">
+          <li><a href="./dashboard-home.html"><span class="material-symbols-outlined">star</span> แดชบอร์ด</a></li>
+          <li><a href="./dashboard-product.html">สินค้า</a></li>
+          <li><a href="./dashboard-order.html">คำสั่งซื้อ</a></li>
+          <li><a href="./dashboard-maintenance.html">บริการซ่อมบำรุง</a></li>
+          <li><a href="./dashboard-account.html">รายชื่อบัญชี</a></li>
+        </ul>
+        <ul id="nav-account">
+          <li><a href="./dashboard-account.html">ข้อมูลบัญชี</a></li>
+          <li><a href="./dashboard-logout.html">ออกจากระบบ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="byb-byb" class=""></section>
+    <main id="go-go" class="p-20">
+      <div><img class="w-16 md:w-32 lg:w-48 xl:w-2/3 2xl:w-full bg-slate-100" src="./src/assets/images/product-003.png"></div>
+      <style>
+        img {width:20px;}
+        @media (width >= 768px) {
+          img {width:60px;}
+          #go-go {background: url("./src/assets/images/banner-calculate.jpg") no-repeat center center;}
+        }
+        @media (width >= 64rem) {
+          img {width:120px;}
+          #go-go {background: url("./src/assets/images/banner-home-hero.jpg") no-repeat center center;}
+        }
+        @media (width >= 80rem) {
+          img {width:60px;}
+          #go-go {background: url("./src/assets/images/banner-register.jpg") no-repeat center center;}
+        }
+        @media (width >= 96rem) {
+          img {width:120px;}
+          #go-go {background: url("./src/assets/images/product-003.png") no-repeat center center;}
+        }
+      </style>
+    </main>
+  </body>
+</html>
