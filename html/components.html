@@ -7,7 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1">
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1,wght@100..700,GRAD@-25..200,opsz@20..48">-->
     <!--<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>-->
     <link rel="stylesheet" href="./src/assets/css/app.css" />
   </head>
@@ -81,43 +83,72 @@
           <li class="bg-centent-darker"  title="--color-centent-darker"></li>
         </ul>
       </section>
+      <section id="icon" class="component-list">
+        <h3>Icon for <code>icon-outline</code> <code>icon-fill</code></h3>
+        <div class="icon-list">
+          <span class="icon-material icon-fill">home</span>
+          <span class="icon-material icon-fill text-primary-base">home</span>
+          icon-material icon-fill
+          <br>
+          <span class="icon-material icon-outline">home</span>
+          <span class="icon-material icon-outline text-primary-base">home</span>
+          icon-material icon-outline
+        </div>
+      </section>
       <section id="button" class="component-list">
-        <h3>Button for <code>button button-</code></h3>
-        <ul>
-          <li><a class="button"                title="button"                href="#button">button</a></li>
-          <li><a class="button button-primary" title="button button-primary" href="#button">button button-primary</a></li>
-          <li><a class="button button-accent"  title="button button-accent"  href="#button">button button-accent</a></li>
-          <li><a class="button button-error"   title="button button-error"   href="#button">button button-error</a></li>
-          <li><a class="button button-warning" title="button button-warning" href="#button">button button-warning</a></li>
-          <li><a class="button button-success" title="button button-success" href="#button">button button-success</a></li>
-          <li><a class="button button-neutral" title="button button-neutral" href="#button">button button-neutral</a></li>
-          <li><a class="button button-content" title="button button-content" href="#button">button button-content</a></li>
-          <li><a class="button-disable"                title="button-disable"                href="#button-disable">button-disable</a></li>
-          <li><a class="button-disable button-primary" title="button-disable button-primary" href="#button-disable">button-disable button-primary</a></li>
-          <li><a class="button-disable button-accent"  title="button-disable button-accent"  href="#button-disable">button-disable button-accent</a></li>
-          <li><a class="button-disable button-error"   title="button-disable button-error"   href="#button-disable">button-disable button-error</a></li>
-          <li><a class="button-disable button-warning" title="button-disable button-warning" href="#button-disable">button-disable button-warning</a></li>
-          <li><a class="button-disable button-success" title="button-disable button-success" href="#button-disable">button-disable button-success</a></li>
-          <li><a class="button-disable button-neutral" title="button-disable button-neutral" href="#button-disable">button-disable button-neutral</a></li>
-          <li><a class="button-disable button-content" title="button-disable button-content" href="#button-disable">button-disable button-content</a></li>
+        <h3>Button for <code>button</code> <code>button-disable</code> <code>button-outline</code> <code>button-outline-disable</code> & <code>button-[color]</code></h3>
+        <div class="button-list">
+          <a class="button"                title="button"                href="#button">button</a>
+          <a class="button button-primary" title="button button-primary" href="#button"><span class="icon-material icon-outline">star</span> button-primary</a>
+          <a class="button button-accent"  title="button button-accent"  href="#button">button-accent</a>
+          <a class="button button-error"   title="button button-error"   href="#button">button-error</a>
+          <a class="button button-warning" title="button button-warning" href="#button">button-warning</a>
+          <a class="button button-success" title="button button-success" href="#button">button-success <span class="icon-material icon-fill">key</span></a>
+          <a class="button button-neutral" title="button button-neutral" href="#button">button-neutral</a>
+          <a class="button button-content" title="button button-content" href="#button">button-content</a>
+          <a class="button-disable"                title="button-disable"                href="#button-disable">button-disable</a>
+          <a class="button-disable button-primary" title="button-disable button-primary" href="#button-disable">button-primary</a>
+          <a class="button-disable button-accent"  title="button-disable button-accent"  href="#button-disable">button-accent</a>
+          <a class="button-disable button-error"   title="button-disable button-error"   href="#button-disable">button-error</a>
+          <a class="button-disable button-warning" title="button-disable button-warning" href="#button-disable">button-warning</a>
+          <a class="button-disable button-success" title="button-disable button-success" href="#button-disable">button-success</a>
+          <a class="button-disable button-neutral" title="button-disable button-neutral" href="#button-disable">button-neutral</a>
+          <a class="button-disable button-content" title="button-disable button-content" href="#button-disable">button-content</a>
+          <a class="button-outline"                title="button-outline"                href="#button-outline">button-outline</a>
+          <a class="button-outline button-primary" title="button-outline button-primary" href="#button-outline">button-primary</a>
+          <a class="button-outline button-accent"  title="button-outline button-accent"  href="#button-outline">button-accent</a>
+          <a class="button-outline button-error"   title="button-outline button-error"   href="#button-outline">button-error</a>
+          <a class="button-outline button-warning" title="button-outline button-warning" href="#button-outline">button-warning</a>
+          <a class="button-outline button-success" title="button-outline button-success" href="#button-outline">button-success</a>
+          <a class="button-outline button-neutral" title="button-outline button-neutral" href="#button-outline">button-neutral</a>
+          <a class="button-outline button-content" title="button-outline button-content" href="#button-outline">button-content</a>
+          <a class="button-outline-disable"                title="button-outline-disable"                href="#button-outline-disable">button-outline-disable</a>
+          <a class="button-outline-disable button-primary" title="button-outline-disable button-primary" href="#button-outline-disable">button-primary</a>
+          <a class="button-outline-disable button-accent"  title="button-outline-disable button-accent"  href="#button-outline-disable">button-accent</a>
+          <a class="button-outline-disable button-error"   title="button-outline-disable button-error"   href="#button-outline-disable">button-error</a>
+          <a class="button-outline-disable button-warning" title="button-outline-disable button-warning" href="#button-outline-disable">button-warning</a>
+          <a class="button-outline-disable button-success" title="button-outline-disable button-success" href="#button-outline-disable">button-success</a>
+          <a class="button-outline-disable button-neutral" title="button-outline-disable button-neutral" href="#button-outline-disable">button-neutral</a>
+          <a class="button-outline-disable button-content" title="button-outline-disable button-content" href="#button-outline-disable">button-content</a>
           
-          <li><a class="button-outline"                title="button-outline"                href="#button-outline">button-outline</a></li>
-          <li><a class="button-outline button-primary" title="button-outline button-primary" href="#button-outline">button-outline button-primary</a></li>
-          <li><a class="button-outline button-accent"  title="button-outline button-accent"  href="#button-outline">button-outline button-accent</a></li>
-          <li><a class="button-outline button-error"   title="button-outline button-error"   href="#button-outline">button-outline button-error</a></li>
-          <li><a class="button-outline button-warning" title="button-outline button-warning" href="#button-outline">button-outline button-warning</a></li>
-          <li><a class="button-outline button-success" title="button-outline button-success" href="#button-outline">button-outline button-success</a></li>
-          <li><a class="button-outline button-neutral" title="button-outline button-neutral" href="#button-outline">button-outline button-neutral</a></li>
-          <li><a class="button-outline button-content" title="button-outline button-content" href="#button-outline">button-outline button-content</a></li>
-          <li><a class="button-outline-disable"                title="button-outline-disable"                href="#button-outline-disable">button-outline-disable</a></li>
-          <li><a class="button-outline-disable button-primary" title="button-outline-disable button-primary" href="#button-outline-disable">button-outline-disable button-primary</a></li>
-          <li><a class="button-outline-disable button-accent"  title="button-outline-disable button-accent"  href="#button-outline-disable">button-outline-disable button-accent</a></li>
-          <li><a class="button-outline-disable button-error"   title="button-outline-disable button-error"   href="#button-outline-disable">button-outline-disable button-error</a></li>
-          <li><a class="button-outline-disable button-warning" title="button-outline-disable button-warning" href="#button-outline-disable">button-outline-disable button-warning</a></li>
-          <li><a class="button-outline-disable button-success" title="button-outline-disable button-success" href="#button-outline-disable">button-outline-disable button-success</a></li>
-          <li><a class="button-outline-disable button-neutral" title="button-outline-disable button-neutral" href="#button-outline-disable">button-outline-disable button-neutral</a></li>
-          <li><a class="button-outline-disable button-content" title="button-outline-disable button-content" href="#button-outline-disable">button-outline-disable button-content</a></li>
-        </ul>
+          <a class="button button-icon"                title="button button-icon"                href="#button-icon"><span class="icon-material icon-fill">loupe</span></a>
+          <a class="button button-icon button-primary" title="button button-icon button-primary" href="#button-icon"><span class="icon-material icon-outline">loupe</span></a>
+          <a class="button button-icon button-accent"  title="button button-icon button-accent"  href="#button-icon"><span class="icon-material icon-fill">loupe</span></a>
+          <a class="button button-icon button-error"   title="button button-icon button-error"   href="#button-icon"><span class="icon-material icon-outline">loupe</span></a>
+          <a class="button button-icon button-warning" title="button button-icon button-warning" href="#button-icon"><span class="icon-material icon-fill">loupe</span></a>
+          <a class="button button-icon button-success" title="button button-icon button-success" href="#button-icon"><span class="icon-material icon-outline">loupe</span></a>
+          <a class="button button-icon button-neutral" title="button button-icon button-neutral" href="#button-icon"><span class="icon-material icon-fill">loupe</span></a>
+          <a class="button button-icon button-content" title="button button-icon button-content" href="#button-icon"><span class="icon-material icon-outline">loupe</span></a>
+
+          <a class="button-outline button-icon"                title="button-outline button-icon"                href="#button-outline-icon"><span class="icon-material icon-fill">loupe</span></span></a>
+          <a class="button-outline button-icon button-primary" title="button-outline button-icon button-primary" href="#button-outline-icon"><span class="icon-material icon-outline">loupe</span></span></a>
+          <a class="button-outline button-icon button-accent"  title="button-outline button-icon button-accent"  href="#button-outline-icon"><span class="icon-material icon-fill">loupe</span></span></a>
+          <a class="button-outline button-icon button-error"   title="button-outline button-icon button-error"   href="#button-outline-icon"><span class="icon-material icon-outline">loupe</span></span></a>
+          <a class="button-outline button-icon button-warning" title="button-outline button-icon button-warning" href="#button-outline-icon"><span class="icon-material icon-fill">loupe</span></span></a>
+          <a class="button-outline button-icon button-success" title="button-outline button-icon button-success" href="#button-outline-icon"><span class="icon-material icon-outline">loupe</span></span></a>
+          <a class="button-outline button-icon button-neutral" title="button-outline button-icon button-neutral" href="#button-outline-icon"><span class="icon-material icon-fill">loupe</span></span></a>
+          <a class="button-outline button-icon button-content" title="button-outline button-icon button-content" href="#button-outline-icon"><span class="icon-material icon-outline">loupe</span></span></a>
+        </div>
       </section>
       <section id="table" class="component-list hover:bg-white!">
         <h3>Table for <code>&lt;table&gt;</code> default</h3>
