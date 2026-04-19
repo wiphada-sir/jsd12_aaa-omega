@@ -1,40 +1,32 @@
 <!doctype html>
-<html lang="en" class="h-screen">
+<html lang="th">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AAA Omega Project</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="./src/assets/css/app.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll(".nav-toggle").forEach(navToggle => {
-          navToggle.addEventListener("click", () => {
-            document.getElementById("navContainer").classList.toggle("-translate-x-full");
-          });
-        });
-      });
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AAA Omega Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="./src/assets/css/app.css">
+    <script type="text/javascript" src="./src/assets/js/script.js" defer></script>
   </head>
-  <body class="dashboard flex min-h-screen">
-    <header class="fixed flex md:hidden items-center w-full rounded-b-2xl bg-white shadow-2xl/10">
+  <body class="dashboard flex">
+    <header class="fixed z-98 flex md:hidden items-center w-full rounded-b-2xl bg-white shadow-2xl/10">
       <a class="nav-logo block text-xl text-neutral-dark hover:text-primary-hover px-5 py-4" href="./dashboard.html">LOGO</a>
       <a class="nav-toggle button button-icon button-ghost button-content hover:text-primary-hover hover:bg-neutral-lighter" href="#navToggle"><span class="icon-material">menu</span></a>
     </header>
-    <aside class="md:w-50 h-screen">
-      <nav id="navContainer" class="fixed z-10 -translate-x-full md:translate-x-0 flex flex-col w-50 h-screen overflow-auto rounded-r-2xl bg-neutral-lighter transition-all">
+    <aside class="md:w-50">
+      <nav id="navContainer" class="fixed z-99 md:flex flex-col w-50 h-dvh overflow-auto rounded-r-2xl bg-neutral-lighter -translate-x-full md:translate-x-0 transition-all">
         <ul id="navHeader" class="flex justify-between items-center gap-2 p-2 md:p-0">
           <li><a class="nav-logo block text-xl text-neutral-dark hover:text-primary-hover px-3 py-2 md:px-5 md:py-4" href="./dashboard.html">LOGO</a></li>
           <li class="md:hidden"><a class="nav-toggle button button-icon button-ghost button-content" href="#navToggle"><span class="icon-material">close</span></a></li>
         </ul>
         <ul id="navMain" class="flex flex-col flex-1 gap-2 p-2 border-t border-neutral-disable">
-          <li><a class="button button-ghost justify-start w-full bg-white" href="./dashboard.html"><span class="icon-material">home</span> แดชบอร์ด</a></li>
+          <li><a class="button button-ghost justify-start w-full hover:text-primary-dark bg-white" href="./dashboard.html"><span class="icon-material">home</span> แดชบอร์ด</a></li>
           <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-product.html"><span class="icon-material">storefront</span> สินค้า</a></li>
           <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-order.html"><span class="icon-material">shopping_cart</span> คำสั่งซื้อ</a></li>
-          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-maintenance.html"><span class="icon-material">build</span> บริการซ่อมบำรุง</a></li>
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-service.html"><span class="icon-material">build</span> บริการซ่อมบำรุง</a></li>
           <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-account.html"><span class="icon-material">person_outline</span> รายชื่อบัญชี</a></li>
         </ul>
         <ul id="navFooter" class="flex flex-col gap-2 p-2 border-t border-neutral-disable">
@@ -43,35 +35,34 @@
         </ul>
       </nav>
     </aside>
-    <main class="flex grow flex-col min-w-0 w-2/3 gap-10 px-5 md:px-10 py-20">
+    <main class="flex grow flex-col min-w-0 w-2/3 gap-10 px-5 pt-25 pb-10 md:p-10 md:pt-15">
       <section id="stat">
-        <h2 class="w-full">สถิติภาพรวม</h2>
-        <article class="card-stat grow xl:grow-0 w-full 2xs:w-5/12 lg:w-3/12 xl:w-fit">
+        <article class="card-stat">
           <h3 class="card-stat__title">ยอดขาย/เดือน</h3>
           <p class="card-stat__value">1,543,500</p>
           <p class="card-stat__subtext badge badge-soft badge-success">+18%</p>
         </article>
-        <article class="card-stat grow xl:grow-0 w-full 2xs:w-5/12 lg:w-3/12 xl:w-fit">
+        <article class="card-stat">
           <h3 class="card-stat__title">ยอดขายรายชิ้น</h3>
           <p class="card-stat__value">13,500</p>
           <p class="card-stat__subtext">3 ออเดอร์</p>
         </article>
-        <article class="card-stat grow xl:grow-0 w-full 2xs:w-5/12 lg:w-3/12 xl:w-fit">
+        <article class="card-stat">
           <h3 class="card-stat__title">ยอดขายยกชุด</h3>
           <p class="card-stat__value">1,530,000</p>
           <p class="card-stat__subtext">7 ออเดอร์</p>
         </article>
-        <article class="card-stat grow xl:grow-0 w-full 2xs:w-5/12 lg:w-3/12 xl:w-fit">
+        <article class="card-stat">
           <h3 class="card-stat__title">กำไรโดยประมาณ</h3>
           <p class="card-stat__value">463,050</p>
           <p class="card-stat__subtext badge badge-soft badge-success">30%</p>
         </article>
-        <article class="card-stat grow xl:grow-0 w-full 2xs:w-5/12 lg:w-3/12 xl:w-fit">
+        <article class="card-stat">
           <h3 class="card-stat__title">งานรอดำเนินการ</h3>
           <p class="card-stat__value">18</p>
           <p class="card-stat__subtext badge badge-soft badge-warning">36%</p>
         </article>
-        <article class="card-stat grow xl:grow-0 w-full 2xs:w-5/12 lg:w-3/12 xl:w-fit">
+        <article class="card-stat">
           <h3 class="card-stat__title">สินค้าใกล้หมด</h3>
           <p class="card-stat__value text-warning-base">12</p>
           <p class="card-stat__subtext">รายการ</p>
@@ -188,7 +179,7 @@
         </div>
         <a class="button button-soft button-content" href="./dashboard-order.html">คำสั่งซื้อทั้งหมด</a>
       </section>
-      <section id="maintenance" class="flex flex-row flex-wrap justify-between items-center gap-5">
+      <section id="service" class="flex flex-row flex-wrap justify-between items-center gap-5">
         <h2>ตารางนัดหมายวันนี้</h2>
         <div class="table-container xs:order-3">
           <table>
@@ -273,7 +264,7 @@
             </tbody>
           </table>
         </div>
-        <a class="button button-soft button-content" href="./dashboard-maintenance.html">นัดหมายทั้งหมด</a>
+        <a class="button button-soft button-content" href="./dashboard-service.html">นัดหมายทั้งหมด</a>
       </section>
     </main>
   </body>
