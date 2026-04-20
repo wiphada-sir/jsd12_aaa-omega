@@ -817,16 +817,10 @@
     }
   }
   table :is(th, td):first-child {
-    padding-left: calc(var(--spacing) * 4);
-    @media (width >= 80rem) {
-      padding-left: calc(var(--spacing) * 10);
-    }
+    padding-left: calc(var(--spacing) * 0);
   }
   table :is(th, td):last-child {
-    padding-right: calc(var(--spacing) * 4);
-    @media (width >= 80rem) {
-      padding-right: calc(var(--spacing) * 10);
-    }
+    padding-right: calc(var(--spacing) * 0);
   }
   table th {
     text-align: left;
@@ -923,9 +917,6 @@
     padding-block: calc(var(--spacing) * 2);
     --tw-leading: calc(var(--spacing) * 5.5);
     line-height: calc(var(--spacing) * 5.5);
-    transition-property: all;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
     &::placeholder {
       color: var(--color-content-disable);
     }
@@ -937,9 +928,6 @@
     &:disabled {
       color: var(--color-content-disable);
     }
-  }
-  select {
-    width: auto;
   }
   input[type="password"] {
     font-size: var(--text-xl);
@@ -998,17 +986,24 @@
     outline-offset: 4px;
     outline-color: var(--color-neutral-base);
   }
-  select {
-    padding-inline: calc(var(--spacing) * 3) !important;
-    padding-block: calc(var(--spacing) * 1.5);
-  }
-  select option {
-    color: var(--color-content-base);
-  }
   textarea {
     field-sizing: content;
     max-height: 80dvh;
     min-height: calc(var(--spacing) * 50);
+  }
+  select {
+    width: auto;
+    cursor: pointer;
+    padding-inline: calc(var(--spacing) * 3) !important;
+    padding-block: calc(var(--spacing) * 1.5);
+  }
+  select option {
+    background-color: var(--color-white);
+    color: var(--color-content-base);
+  }
+  select option[disabled] {
+    background-color: var(--color-white);
+    color: var(--color-content-disable);
   }
 }
 @layer components {
@@ -1037,10 +1032,13 @@
   .button {
     position: relative;
     display: inline-flex;
+    min-height: calc(var(--spacing) * 10);
     align-items: center;
     justify-content: center;
     gap: calc(var(--spacing) * 2);
     border-radius: var(--radius-lg);
+    border-style: var(--tw-border-style);
+    border-width: 0px;
     padding-inline: calc(var(--spacing) * 4);
     --tw-leading: calc(var(--spacing) * 10);
     line-height: calc(var(--spacing) * 10);
@@ -1070,6 +1068,7 @@
   }
   .badge {
     display: inline-flex;
+    min-height: calc(var(--spacing) * 5);
     align-items: center;
     gap: calc(var(--spacing) * 1);
     border-radius: var(--radius-sm);
@@ -1098,21 +1097,23 @@
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
   }
-  label .badge {
+  .badge-sm {
+    min-height: calc(var(--spacing) * 4);
     padding-inline: calc(var(--spacing) * 1.5);
     font-size: 10px;
     --tw-leading: calc(var(--spacing) * 3.5);
     line-height: calc(var(--spacing) * 3.5);
   }
-  label .badge .icon-material {
+  .badge-sm .icon-material {
     margin-inline: calc(var(--spacing) * -0.5);
     font-size: 12px;
-    --tw-leading: calc(var(--spacing) * 3.5);
-    line-height: calc(var(--spacing) * 3.5);
+    --tw-leading: calc(var(--spacing) * 4);
+    line-height: calc(var(--spacing) * 4);
   }
-  label .badge-icon {
+  .badge-sm.badge-icon {
     width: calc(var(--spacing) * 4);
     height: calc(var(--spacing) * 4);
+    padding: calc(var(--spacing) * 0);
   }
   .button , .badge , .button-primary , .badge-primary {
     background-color: var(--color-primary-base);
@@ -1169,6 +1170,10 @@
         background-color: var(--color-content-hover);
       }
     }
+  }
+  .button-soft , .badge-soft {
+    --tw-border-style: none;
+    border-style: none;
   }
   .button-soft , .badge-soft , .button-soft.button-primary , .badge-soft.badge-primary {
     background-color: color-mix(in srgb, #f0efff 40%, transparent);
@@ -1270,6 +1275,10 @@
   .badge-outline {
     --tw-leading: calc(var(--spacing) * 4.5);
     line-height: calc(var(--spacing) * 4.5);
+  }
+  .badge-sm.badge-outline {
+    --tw-leading: calc(var(--spacing) * 3.5);
+    line-height: calc(var(--spacing) * 3.5);
   }
   .button-outline , .badge-outline {
     border-style: var(--tw-border-style);
