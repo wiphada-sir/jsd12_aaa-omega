@@ -520,7 +520,34 @@
             </div>
           </form>
       </section>
+      <section id="form" class="component-list hover:bg-white!">
+        <h2>Accordion for FAQ</h2>
+          <p><code>&lt;details&gt;</code> <small>is default</small><br>
+          and content in block display</p>
+          <div class="accordion-list">
+            <details>
+              <summary>Title within 'summary' tag</summary>
+              <p>Content within the 'p' tag or other tags following the 'summary' tag</p>
+            </details>
+            <details>
+              <summary>Title within 'summary' tag</summary>
+              <div>Content within the 'div' tag or other tags following the 'summary' tag</div>
+            </details>
+            <details>
+              <summary>Title within 'summary' tag</summary>
+              <ul>
+                <li>Content within the 'ul > li' tag or other tags following the 'summary' tag</li>
+              </ul>
+            </details>
+            <details>
+              <summary>Title within 'summary' tag</summary>
+              <ol>
+                <li>Content within the 'ol > li' tag or other tags following the 'summary' tag</li>
+              </ol>
+            </details>
+          </div>
+      </section>
     </main>
-    <footer class="text-center py-5 border-t border-neutral-disable"><em class="inline-block text-white px-3 pt-0.5 pb-1 rounded-full bg-neutral-base">happy coding :)</em></footer>
+    <footer class="text-center py-5 border-t border-neutral-disable mt-5"><em class="inline-block text-white px-3 pt-0.5 pb-1 rounded-full bg-neutral-base">happy coding :)</em></footer>
   </body>
 </html>
