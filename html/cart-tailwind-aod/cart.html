@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ตะกร้าสินค้า</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Noto Sans Thai', 'sans-serif'],
+          },
+          colors: {
+            primary: '#7f8dd1',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    input[type="checkbox"] { accent-color: #7f8dd1; cursor: pointer; }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; }
+  </style>
+</head>
+<body class="font-sans bg-slate-50 text-[#1e2939] text-sm min-h-screen">
+
+<header class="bg-primary px-5 h-14 flex items-center gap-4 sticky top-0 z-[100]">
+  <span class="text-[22px] font-bold text-white tracking-wide">SolarShop</span>
+  <span class="w-px h-6 bg-white/40"></span>
+  <span class="text-white/90 text-base">ตะกร้าสินค้า</span>
+  <div class="ml-auto relative text-white text-[22px] cursor-pointer">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span class="absolute -top-1.5 -right-2 bg-white text-primary text-[10px] font-bold min-w-[16px] h-4 rounded-full flex items-center justify-center px-1" id="cartBadge">3</span>
+  </div>
+</header>
+
+<div class="max-w-[1200px] mx-auto px-4 py-5">
+  <div class="grid grid-cols-[1fr_320px] gap-4 items-start">
+
+    <!-- LEFT: Cart Items -->
+    <div>
+      <div class="bg-white rounded shadow-[0_1px_4px_rgba(0,0,0,0.08)] overflow-hidden">
+
+        <!-- Cart Table Header -->
+        <div class="grid grid-cols-[40px_1fr_120px_120px_120px_60px] items-center px-5 py-3 border-b border-slate-200 text-slate-500 text-[13px]">
+          <input type="checkbox" id="selectAll" class="w-4 h-4" />
+          <span>สินค้า</span>
+          <span class="text-center">ราคาต่อชิ้น</span>
+          <span class="text-center">จำนวน</span>
+          <span class="text-center">ราคารวม</span>
+          <span></span>
+        </div>
+
+        <!-- Item 1 -->
+        <div class="cart-item grid grid-cols-[40px_1fr_120px_120px_120px_60px] items-center px-5 py-4 gap-2 border-b border-slate-200" data-price="18900">
+          <input type="checkbox" class="item-check w-4 h-4" />
+          <div class="flex gap-3 items-start">
+            <img class="w-[72px] h-[72px] object-cover rounded border border-slate-200 flex-shrink-0 bg-[#f0f0f0]" src="https://placehold.co/72x72/fff9c4/f59e0b?text=☀️" alt="solar-panel" />
+            <div>
+              <div class="text-sm leading-snug line-clamp-2">แผง Solar Cell โมโนคริสตัลไลน์ 400W ประสิทธิภาพสูง รับประกัน 25 ปี</div>
+              <div class="mt-1.5 text-xs text-slate-500 bg-slate-50 inline-block px-2 py-0.5 rounded-sm">ตัวเลือก: 400W, สีดำ (Half-Cell)</div>
+            </div>
+          </div>
+          <div class="item-price text-center text-sm">฿18,900</div>
+          <div class="qty-control flex items-center justify-center">
+            <button class="qty-btn w-7 h-7 border border-slate-200 bg-white cursor-pointer text-sm flex items-center justify-center rounded-l hover:bg-slate-50 transition-colors" onclick="changeQty(this,-1)">−</button>
+            <input class="qty-input w-10 h-7 border border-l-0 border-r-0 border-slate-200 text-center text-sm outline-none font-[inherit]" type="number" value="1" min="1" max="99" onchange="updateCart()" />
+            <button class="qty-btn w-7 h-7 border border-slate-200 bg-white cursor-pointer text-sm flex items-center justify-center rounded-r hover:bg-slate-50 transition-colors" onclick="changeQty(this,1)">+</button>
+          </div>
+          <div class="item-subtotal text-center text-sm text-primary font-semibold">฿18,900</div>
+          <button class="delete-btn bg-transparent border-none text-slate-500 cursor-pointer text-lg flex justify-center hover:text-primary transition-colors" onclick="deleteItem(this)"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="cart-item grid grid-cols-[40px_1fr_120px_120px_120px_60px] items-center px-5 py-4 gap-2 border-b border-slate-200" data-price="35000">
+          <input type="checkbox" class="item-check w-4 h-4" />
+          <div class="flex gap-3 items-start">
+            <img class="w-[72px] h-[72px] object-cover rounded border border-slate-200 flex-shrink-0 bg-[#f0f0f0]" src="https://placehold.co/72x72/fff9c4/f59e0b?text=⚡" alt="inverter" />
+            <div>
+              <div class="text-sm leading-snug line-clamp-2">Solar Inverter ไฮบริด 5kW รองรับแบตเตอรี่ LiFePO4 พร้อม Wi-Fi Monitoring</div>
+              <div class="mt-1.5 text-xs text-slate-500 bg-slate-50 inline-block px-2 py-0.5 rounded-sm">ตัวเลือก: 5kW, Single Phase</div>
+            </div>
+          </div>
+          <div class="item-price text-center text-sm">฿35,000</div>
+          <div class="qty-control flex items-center justify-center">
+            <button class="qty-btn w-7 h-7 border border-slate-200 bg-white cursor-pointer text-sm flex items-center justify-center rounded-l hover:bg-slate-50 transition-colors" onclick="changeQty(this,-1)">−</button>
+            <input class="qty-input w-10 h-7 border border-l-0 border-r-0 border-slate-200 text-center text-sm outline-none font-[inherit]" type="number" value="1" min="1" max="99" onchange="updateCart()" />
+            <button class="qty-btn w-7 h-7 border border-slate-200 bg-white cursor-pointer text-sm flex items-center justify-center rounded-r hover:bg-slate-50 transition-colors" onclick="changeQty(this,1)">+</button>
+          </div>
+          <div class="item-subtotal text-center text-sm text-primary font-semibold">฿35,000</div>
+          <button class="delete-btn bg-transparent border-none text-slate-500 cursor-pointer text-lg flex justify-center hover:text-primary transition-colors" onclick="deleteItem(this)"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="cart-item grid grid-cols-[40px_1fr_120px_120px_120px_60px] items-center px-5 py-4 gap-2" data-price="28500">
+          <input type="checkbox" class="item-check w-4 h-4" />
+          <div class="flex gap-3 items-start">
+            <img class="w-[72px] h-[72px] object-cover rounded border border-slate-200 flex-shrink-0 bg-[#f0f0f0]" src="https://placehold.co/72x72/fff9c4/f59e0b?text=🔋" alt="battery" />
+            <div>
+              <div class="text-sm leading-snug line-clamp-2">แบตเตอรี่ LiFePO4 48V 100Ah สำหรับระบบ Solar ความปลอดภัยสูง อายุการใช้งาน 6,000 รอบ</div>
+              <div class="mt-1.5 text-xs text-slate-500 bg-slate-50 inline-block px-2 py-0.5 rounded-sm">ตัวเลือก: 48V 100Ah, สีเทา</div>
+            </div>
+          </div>
+          <div class="item-price text-center text-sm">฿28,500</div>
+          <div class="qty-control flex items-center justify-center">
+            <button class="qty-btn w-7 h-7 border border-slate-200 bg-white cursor-pointer text-sm flex items-center justify-center rounded-l hover:bg-slate-50 transition-colors" onclick="changeQty(this,-1)">−</button>
+            <input class="qty-input w-10 h-7 border border-l-0 border-r-0 border-slate-200 text-center text-sm outline-none font-[inherit]" type="number" value="1" min="1" max="99" onchange="updateCart()" />
+            <button class="qty-btn w-7 h-7 border border-slate-200 bg-white cursor-pointer text-sm flex items-center justify-center rounded-r hover:bg-slate-50 transition-colors" onclick="changeQty(this,1)">+</button>
+          </div>
+          <div class="item-subtotal text-center text-sm text-primary font-semibold">฿28,500</div>
+          <button class="delete-btn bg-transparent border-none text-slate-500 cursor-pointer text-lg flex justify-center hover:text-primary transition-colors" onclick="deleteItem(this)"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+
+      </div>
+
+      <!-- Sticky Footer -->
+      <div class="cart-footer flex items-center px-5 py-3.5 gap-4 bg-white border-t border-slate-200 sticky bottom-0 shadow-[0_-2px_8px_rgba(0,0,0,0.06)]">
+        <div class="flex items-center gap-2 text-sm">
+          <input type="checkbox" id="selectAllFooter" class="w-4 h-4" />
+          <label for="selectAllFooter">เลือกทั้งหมด (<span id="totalItems">3</span>)</label>
+        </div>
+        <button class="bg-transparent border-none text-slate-500 cursor-pointer text-sm px-2 py-1 rounded hover:text-primary transition-colors font-[inherit]" onclick="deleteSelected()">ลบที่เลือก</button>
+        <div class="ml-auto flex items-center gap-6">
+          <div>
+            <div class="text-sm text-slate-500">รวม (<span id="selectedCount">0</span> ชิ้น):</div>
+            <div class="text-xl font-bold text-primary" id="totalAmount">฿0</div>
+          </div>
+          <button class="px-10 py-3.5 text-base rounded border-none font-[inherit] font-medium cursor-pointer transition-all active:scale-[0.98] bg-primary text-white hover:opacity-90 disabled:bg-slate-300 disabled:cursor-not-allowed disabled:active:scale-100" id="checkoutBtn" onclick="goToAddress()" disabled>
+            ดำเนินการต่อ
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Order Summary -->
+    <div class="bg-white rounded shadow-[0_1px_4px_rgba(0,0,0,0.08)] p-4 sticky top-[72px]">
+      <h3 class="text-base font-semibold mb-4 pb-3 border-b border-slate-200">สรุปคำสั่งซื้อ</h3>
+      <div class="flex justify-between mb-2.5 text-sm">
+        <span>ราคาสินค้า</span>
+        <span id="summarySubtotal">฿0</span>
+      </div>
+      <div class="flex justify-between mb-2.5 text-sm">
+        <span>ค่าจัดส่ง</span>
+        <span id="summaryShipping" class="text-slate-500 text-xs">คำนวณในขั้นตอนถัดไป</span>
+      </div>
+      <div class="flex justify-between border-t border-slate-200 mt-3 pt-3 text-base font-semibold">
+        <span>ยอดรวมทั้งหมด</span>
+        <span class="text-primary text-xl" id="summaryTotal">฿0</span>
+      </div>
+      <button class="w-full mt-4 px-6 py-2.5 rounded border-none font-[inherit] text-sm font-medium cursor-pointer transition-all active:scale-[0.98] bg-primary text-white hover:opacity-90 disabled:bg-slate-300 disabled:cursor-not-allowed disabled:active:scale-100" id="summaryCheckoutBtn" onclick="goToAddress()" disabled>
+        ดำเนินการต่อ (0 ชิ้น)
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
