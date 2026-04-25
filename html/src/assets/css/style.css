@@ -1,1 +1,36 @@
-/* Add css style here */
+input[type="checkbox"],
+    input[type="radio"] {
+      accent-color: #7f8dd1;
+      cursor: pointer;
+    }
+
+    .error-msg {
+      display: none;
+      font-size: 11px;
+      color: #e53935;
+    }
+
+    .error-msg.show {
+      display: block;
+    }
+
+    input.error,
+    select.error {
+      border-color: #e53935 !important;
+    }
+
+    .shipping-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+
+    .shipping-option.selected {
+      border-color: #7f8dd1;
+      background: #f5f6ff;
+    }

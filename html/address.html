@@ -5,67 +5,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ที่อยู่จัดส่ง - AAA Omega Project</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Kanit', 'sans-serif'] },
-          colors: { primary: '#7f8dd1' }
-        }
-      }
-    }
-  </script>
-  <link rel="stylesheet" href="../src/assets/css/app.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    input[type="checkbox"],
-    input[type="radio"] {
-      accent-color: #7f8dd1;
-      cursor: pointer;
-    }
-
-    .error-msg {
-      display: none;
-      font-size: 11px;
-      color: #e53935;
-    }
-
-    .error-msg.show {
-      display: block;
-    }
-
-    input.error,
-    select.error {
-      border-color: #e53935 !important;
-    }
-
-    .shipping-option {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 16px;
-      border: 2px solid #e2e8f0;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: border-color 0.15s;
-    }
-
-    .shipping-option.selected {
-      border-color: #7f8dd1;
-      background: #f5f6ff;
-    }
-  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="./src/assets/css/app.css">
+  <link rel="stylesheet" href="./src/assets/css/style.css">
+  <script type="text/javascript" src="./src/assets/js/script.js" defer></script>
+  <script type="text/javascript" src="./src/assets/js/script-02.js" defer></script>
 </head>
 
-<body class="font-sans bg-slate-50 text-[#1e2939] text-sm min-h-screen">
+<body class=" bg-slate-50 text-sm min-h-screen">
 
-  <header class="bg-primary px-5 h-14 flex items-center gap-4 sticky top-0 z-[100]">
+  <header class="bg-primary-base px-5 h-14 flex items-center gap-4 sticky top-0 z-[100]">
     <span class="text-[22px] font-bold text-white tracking-wide">SolarShop</span>
     <span class="w-px h-6 bg-white/40"></span>
     <span class="text-white/90 text-base">ชำระเงิน</span>
@@ -75,19 +31,20 @@
 
     <!-- Stepper -->
     <div class="flex items-center justify-center py-5">
-      <div class="flex items-center gap-2 text-[#40a448]">
+      <div class="flex items-center gap-2 text-success-base">
         <div
-          class="w-7 h-7 rounded-full border-2 bg-[#40a448] border-[#40a448] text-white flex items-center justify-center text-xs font-semibold flex-shrink-0">
-          <i class="fa-solid fa-check"></i>
+          class="w-7 h-7 rounded-full border-2 bg-success-base border-success-base text-white flex items-center justify-center text-xs font-semibold flex-shrink-0">
+          <!-- <i class="fa-solid fa-check"></i> -->
+          <span class="icon-material">check</span>
         </div>
         <span class="text-[13px] font-medium whitespace-nowrap">ตะกร้าสินค้า</span>
       </div>
-      <div class="w-[60px] h-0.5 bg-[#40a448] mx-1"></div>
-      <div class="flex items-center gap-2 text-primary">
+      <div class="w-[60px] h-0.5 bg-success-base mx-1"></div>
+      <div class="flex items-center gap-2 text-primary-base">
         <div
-          class="w-7 h-7 rounded-full border-2 bg-primary border-primary text-white flex items-center justify-center text-xs font-semibold flex-shrink-0">
+          class="w-7 h-7 rounded-full border-2 bg-primary-base border-primary-base text-white flex items-center justify-center text-xs font-semibold flex-shrink-0">
           2</div>
-        <span class="text-[13px] font-medium whitespace-nowrap">ที่อยู่จัดส่ง</span>
+        <span class="text-[13px] font-medium whitespace-nowrap ">ที่อยู่จัดส่ง</span>
       </div>
       <div class="w-[60px] h-0.5 bg-slate-200 mx-1"></div>
       <div class="flex items-center gap-2 text-slate-400">
@@ -112,21 +69,23 @@
 
         <!-- Address Fields -->
         <div class="p-5">
-          <h3 class="text-base font-semibold mb-5"><i
-              class="fa-solid fa-location-dot text-primary mr-2"></i>ที่อยู่จัดส่ง</h3>
+          <h3 class="text-base font-semibold mb-5">
+
+            <i class="icon-material text-primary-base mr-2">pin_drop</i>ที่อยู่จัดส่ง
+          </h3>
 
           <div class="grid grid-cols-2 gap-4 mb-4">
             <div class="flex flex-col gap-1.5">
-              <label class="text-[13px] font-medium">ชื่อผู้รับ <span class="text-primary">*</span></label>
+              <label class="text-[13px] font-medium">ชื่อผู้รับ <span class="text-primary-base">*</span></label>
               <input
-                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary bg-white font-[inherit]"
-                type="text" id="firstName" placeholder="ชื่อ" />
+                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary-base bg-white font-[inherit]"
+                type="text" id="firstName" placeholder="ชื่อ" value="จักรกฤษณ์" />
               <span class="error-msg" id="firstNameErr">กรุณากรอกชื่อ</span>
             </div>
             <div class="flex flex-col gap-1.5">
-              <label class="text-[13px] font-medium">นามสกุลผู้รับ <span class="text-primary">*</span></label>
+              <label class="text-[13px] font-medium">นามสกุลผู้รับ <span class="text-primary-base">*</span></label>
               <input
-                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary bg-white font-[inherit]"
+                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary-base bg-white font-[inherit]"
                 type="text" id="lastName" placeholder="นามสกุล" />
               <span class="error-msg" id="lastNameErr">กรุณากรอกนามสกุล</span>
             </div>
@@ -134,16 +93,16 @@
 
           <div class="grid grid-cols-2 gap-4 mb-4">
             <div class="flex flex-col gap-1.5">
-              <label class="text-[13px] font-medium">เบอร์โทรศัพท์ <span class="text-primary">*</span></label>
+              <label class="text-[13px] font-medium">เบอร์โทรศัพท์ <span class="text-primary-base">*</span></label>
               <input
-                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary bg-white font-[inherit]"
+                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary-base bg-white font-[inherit]"
                 type="tel" id="phone" placeholder="0XX-XXX-XXXX" maxlength="10" />
               <span class="error-msg" id="phoneErr">กรุณากรอกเบอร์โทร 10 หลัก</span>
             </div>
             <div class="flex flex-col gap-1.5">
               <label class="text-[13px] font-medium">อีเมล</label>
               <input
-                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary bg-white font-[inherit]"
+                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary-base bg-white font-[inherit]"
                 type="email" id="email" placeholder="example@email.com" />
               <span class="error-msg" id="emailErr">รูปแบบอีเมลไม่ถูกต้อง</span>
             </div>
@@ -151,9 +110,10 @@
 
           <div class="mb-4">
             <div class="flex flex-col gap-1.5">
-              <label class="text-[13px] font-medium">บ้านเลขที่ / ที่อยู่ <span class="text-primary">*</span></label>
+              <label class="text-[13px] font-medium">บ้านเลขที่ / ที่อยู่ <span
+                  class="text-primary-base">*</span></label>
               <input
-                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary bg-white font-[inherit]"
+                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary-base bg-white font-[inherit]"
                 type="text" id="address" placeholder="บ้านเลขที่, หมู่, ซอย, ถนน" />
               <span class="error-msg" id="addressErr">กรุณากรอกที่อยู่</span>
             </div>
@@ -161,9 +121,9 @@
 
           <div class="grid grid-cols-3 gap-4 mb-4">
             <div class="flex flex-col gap-1.5">
-              <label class="text-[13px] font-medium">จังหวัด <span class="text-primary">*</span></label>
+              <label class="text-[13px] font-medium">จังหวัด <span class="text-primary-base">*</span></label>
               <select
-                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary bg-white font-[inherit]"
+                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary-base bg-white font-[inherit]"
                 id="province">
                 <option value="">เลือกจังหวัด</option>
                 <option>กรุงเทพมหานคร</option>
@@ -180,16 +140,16 @@
               <span class="error-msg" id="provinceErr">กรุณาเลือกจังหวัด</span>
             </div>
             <div class="flex flex-col gap-1.5">
-              <label class="text-[13px] font-medium">อำเภอ/เขต <span class="text-primary">*</span></label>
+              <label class="text-[13px] font-medium">อำเภอ/เขต <span class="text-primary-base">*</span></label>
               <input
-                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary bg-white font-[inherit]"
+                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary-base bg-white font-[inherit]"
                 type="text" id="district" placeholder="อำเภอ/เขต" />
               <span class="error-msg" id="districtErr">กรุณากรอกอำเภอ/เขต</span>
             </div>
             <div class="flex flex-col gap-1.5">
-              <label class="text-[13px] font-medium">ตำบล/แขวง <span class="text-primary">*</span></label>
+              <label class="text-[13px] font-medium">ตำบล/แขวง <span class="text-primary-base">*</span></label>
               <input
-                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary bg-white font-[inherit]"
+                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary-base bg-white font-[inherit]"
                 type="text" id="subdistrict" placeholder="ตำบล/แขวง" />
               <span class="error-msg" id="subdistrictErr">กรุณากรอกตำบล/แขวง</span>
             </div>
@@ -197,16 +157,16 @@
 
           <div class="grid grid-cols-2 gap-4 mb-4">
             <div class="flex flex-col gap-1.5">
-              <label class="text-[13px] font-medium">รหัสไปรษณีย์ <span class="text-primary">*</span></label>
+              <label class="text-[13px] font-medium">รหัสไปรษณีย์ <span class="text-primary-base">*</span></label>
               <input
-                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary bg-white font-[inherit]"
+                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary-base bg-white font-[inherit]"
                 type="text" id="zipcode" placeholder="XXXXX" maxlength="5" />
               <span class="error-msg" id="zipcodeErr">กรุณากรอกรหัสไปรษณีย์ 5 หลัก</span>
             </div>
             <div class="flex flex-col gap-1.5">
               <label class="text-[13px] font-medium">ป้ายกำกับที่อยู่</label>
               <select
-                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary bg-white font-[inherit]"
+                class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary-base bg-white font-[inherit]"
                 id="addressLabel">
                 <option value="home">บ้าน</option>
                 <option value="office">ที่ทำงาน</option>
@@ -218,51 +178,51 @@
           <div class="flex flex-col gap-1.5">
             <label class="text-[13px] font-medium">หมายเหตุเพิ่มเติม</label>
             <textarea
-              class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary bg-white font-[inherit] resize-y min-h-[72px]"
+              class="px-3 py-2.5 border border-slate-200 rounded text-sm outline-none transition-colors focus:border-primary-base bg-white font-[inherit] resize-y min-h-[72px]"
               id="note" placeholder="เช่น สถานที่สังเกตุ, เวลาที่สะดวกรับของ (ไม่บังคับ)"></textarea>
           </div>
         </div>
 
         <!-- Shipping Options -->
         <div class="p-5 border-t border-slate-200">
-          <h3 class="text-base font-semibold mb-5"><i class="fa-solid fa-truck text-primary mr-2"></i>วิธีการจัดส่ง</h3>
+          <h3 class="text-base font-semibold mb-5"><i
+              class="icon-material text-primary-base mr-2">local_shipping</i>วิธีการจัดส่ง
+          </h3>
           <div class="flex flex-col gap-2.5">
             <label class="shipping-option selected" id="ship-standard">
-              <input type="radio" name="shipping" value="standard" checked onchange="selectShipping(this)" />
+              <input class="w-fit" type="radio" name="shipping" value="standard" checked
+                onchange="selectShipping(this)" />
               <div class="flex-1">
                 <div class="font-semibold text-sm">จัดส่งมาตรฐาน</div>
                 <div class="text-xs text-slate-500 mt-0.5">ได้รับสินค้าภายใน 3-5 วันทำการ</div>
               </div>
-              <div class="font-semibold text-[#40a448] text-sm">ฟรี</div>
+              <div class="font-semibold text-success-base text-sm">ฟรี</div>
             </label>
             <label class="shipping-option" id="ship-express">
-              <input type="radio" name="shipping" value="express" onchange="selectShipping(this)" />
+              <input class="w-fit" type="radio" name="shipping" value="express" onchange="selectShipping(this)" />
               <div class="flex-1">
                 <div class="font-semibold text-sm">จัดส่ง Express</div>
                 <div class="text-xs text-slate-500 mt-0.5">ได้รับสินค้าภายใน 1-2 วันทำการ</div>
               </div>
-              <div class="font-semibold text-primary text-sm">+฿50</div>
+              <div class="font-semibold text-primary-base text-sm">+฿50</div>
             </label>
             <label class="shipping-option" id="ship-same">
-              <input type="radio" name="shipping" value="sameday" onchange="selectShipping(this)" />
+              <input class="w-fit" type="radio" name="shipping" value="sameday" onchange="selectShipping(this)" />
               <div class="flex-1">
                 <div class="font-semibold text-sm">จัดส่งวันเดียวกัน (Same Day)</div>
                 <div class="text-xs text-slate-500 mt-0.5">สั่งก่อน 12:00 น. รับภายในวันนี้</div>
               </div>
-              <div class="font-semibold text-primary text-sm">+฿100</div>
+              <div class="font-semibold text-primary-base text-sm">+฿100</div>
             </label>
           </div>
         </div>
 
         <!-- Page Actions -->
         <div class="flex justify-end gap-3 p-5 border-t border-slate-200">
-          <a href="index.html"
-            class="px-6 py-2.5 rounded border border-slate-200 bg-white text-[#1e2939] text-sm font-medium cursor-pointer transition-all hover:border-primary hover:text-primary active:scale-[0.98] no-underline inline-flex items-center gap-2">
+          <a href="index.html" class="button button-outline button-content">
             <i class="fa-solid fa-chevron-left"></i> ย้อนกลับ
           </a>
-          <button
-            class="px-6 py-2.5 rounded border-none bg-primary text-white text-sm font-medium cursor-pointer font-[inherit] transition-all hover:opacity-90 active:scale-[0.98]"
-            onclick="goToPayment()">
+          <button class="button" onclick="goToPayment()">
             ถัดไป <i class="fa-solid fa-chevron-right ml-1"></i>
           </button>
         </div>
@@ -278,22 +238,22 @@
         </div>
         <div class="flex justify-between mb-2.5 text-sm">
           <span>ส่วนลด</span>
-          <span class="text-primary" id="addrDiscount">-</span>
+          <span class="text-primary-base" id="addrDiscount">-</span>
         </div>
         <div class="flex justify-between mb-2.5 text-sm">
           <span>ค่าจัดส่ง</span>
-          <span class="text-[#40a448]" id="addrShipping">ฟรี</span>
+          <span class="text-success-base" id="addrShipping">ฟรี</span>
         </div>
         <div class="flex justify-between border-t border-slate-200 mt-3 pt-3 text-base font-semibold">
           <span>ยอดรวมทั้งหมด</span>
-          <span class="text-primary text-xl" id="addrTotal">-</span>
+          <span class="text-primary-base text-xl" id="addrTotal">-</span>
         </div>
       </div>
 
     </div>
   </div>
 
-  <script src="script-02.js"></script>
+
 </body>
 
 </html>
