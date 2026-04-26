@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Order Dashboard - AAA Omega Project</title>
+    <title>Order Item Dashboard - AAA Omega Project</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
@@ -39,7 +39,7 @@
     </aside>
     <main class="flex grow flex-col min-w-0 w-2/3 gap-10 px-5 pt-25 pb-10 md:px-10 md:py-15">
       <section id="orderEdit" class="flex flex-row flex-wrap justify-between items-center gap-10">
-        <h1><span class="text-content-hover">คำสั่งซื้อหมายเลข:</span> AAA20260026</h1>
+        <h1><span class="text-content-hover">รายละเอียดคำสั่งซื้อ:</span> AAA20260026</h1>
         <select class="button button-soft button-content" name="statusOrder">
           <option value="" disabled hidden>เลือกสถานะ</option>
           <option value="pending_payment" selected>รอชำระเงิน</option>
@@ -49,7 +49,7 @@
           <option value="delivered">จัดส่งสำเร็จ</option>
           <option value="cancelled">ยกเลิกคำสั่งซื้อ</option>
         </select>
-        <table id="orderAccount">
+        <table class="table-responsive">
           <colgroup>
             <col class="w-px">
             <col class="w-auto">
@@ -114,7 +114,7 @@
             </tbody>
           </table>
         </div>
-        <table class="lg:order-6 lg:self-start max-w-75 max-lg:ml-auto">
+        <table class="lg:order-6 self-start max-w-75 max-lg:ml-auto">
           <colgroup>
             <col class="w-auto">
             <col class="w-auto">
@@ -138,7 +138,7 @@
             </tr>
           </tbody>
         </table>
-        <form class="lg:grow lg:w-1/2">
+        <form class="lg:grow self-start lg:w-1/2">
           <div class="input-row">
             <div class="input-group">
               <label for="message">หมายเหตุ:</label>
@@ -150,7 +150,7 @@
             </div>
           </div>
           <div class="button-row">
-            <button type="reset" class="button button-soft button-content">ยกเลิก</button>
+            <button type="reset" class="button button-soft button-content" onclick="event.preventDefault(); window.location.href='./dashboard-order.html';">ยกเลิก</button>
             <button type="submit" class="button" onclick="event.preventDefault(); window.location.href='./dashboard-order.html';">บันทึก</button>
           </div>
         </form>

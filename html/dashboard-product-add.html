@@ -81,10 +81,13 @@
             </div>
           </div>
           <div class="input-row">
-            <div class="input-group">
-              <label for="productImage">รูปภาพสินค้า
-                <span class="badge badge-sm badge-pill badge-icon badge-outline badge-content" title="รองรับไฟล์ JPG, PNG, WEBP (ไม่เกิน 5MB)"><span class="icon-material">info_i</span></span></label>
-              <input type="file" id="productImage" name="productImage" value="" accept="image/jpeg, image/png, image/webp">
+            <div class="input-row xs:flex-row">
+              <img class="size-17" src="">
+              <div class="input-group">
+                <label for="serviceImage">รูปภาพสินค้า
+                  <span class="badge badge-sm badge-pill badge-icon badge-outline badge-content" title="รองรับไฟล์ JPG, PNG, WEBP (ไม่เกิน 5MB)"><span class="icon-material">info_i</span></span></label>
+                <input type="file" id="serviceImage" class="max-w-57.5" name="serviceImage" value="" accept="image/jpeg, image/png, image/webp">
+              </div>
             </div>
             <div class="input-group">
               <label for="productDateCreated">วันที่เพิ่มสินค้า
@@ -97,7 +100,7 @@
             <textarea id="productDescription" name="productDescription" rows="5" placeholder="ระบุคุณสมบัติ จุดเด่น การใช้งาน และการรับประกัน" maxlength="2000"></textarea>
           </div>
           <div class="button-row">
-            <button type="reset" class="button button-soft button-content">ยกเลิก</button>
+            <button type="reset" class="button button-soft button-content" onclick="event.preventDefault(); window.location.href='./dashboard-product.html';">ยกเลิก</button>
             <button class="button" onclick="event.preventDefault(); window.location.href='./dashboard-product.html';">บันทึก</button>
           </div>
         </form>

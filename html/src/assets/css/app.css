@@ -561,6 +561,9 @@
   .w-auto {
     width: auto;
   }
+  .w-fit {
+    width: fit-content;
+  }
   .w-full {
     width: 100%;
   }
@@ -626,6 +629,9 @@
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
+  .cursor-default {
+    cursor: default;
   }
   .cursor-pointer {
     cursor: pointer;
@@ -1683,6 +1689,27 @@
       }
     }
   }
+  .hover\:border-warning-base {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-warning-base);
+      }
+    }
+  }
+  .hover\:border-warning-disable {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-warning-disable);
+      }
+    }
+  }
+  .hover\:border-warning-soft {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-warning-soft);
+      }
+    }
+  }
   .hover\:bg-neutral-lighter {
     &:hover {
       @media (hover: hover) {
@@ -1694,6 +1721,43 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-slate-50);
+      }
+    }
+  }
+  .hover\:bg-warning-lighter {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-warning-lighter);
+      }
+    }
+  }
+  .hover\:bg-warning-lighter\/10 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #ffede5 10%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-warning-lighter) 10%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:bg-warning-lighter\/20 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #ffede5 20%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-warning-lighter) 20%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:bg-warning-lighter\/40 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #ffede5 40%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-warning-lighter) 40%, transparent);
+        }
       }
     }
   }
@@ -1747,6 +1811,11 @@
       }
     }
   }
+  .focus\:border-primary-base {
+    &:focus {
+      border-color: var(--color-primary-base);
+    }
+  }
   .focus\:outline-none {
     &:focus {
       --tw-outline-style: none;
@@ -1778,9 +1847,19 @@
       }
     }
   }
+  .max-xl\:hidden {
+    @media (width < 80rem) {
+      display: none;
+    }
+  }
   .max-lg\:ml-auto {
     @media (width < 64rem) {
       margin-left: auto;
+    }
+  }
+  .\32 xs\:w-fit {
+    @media (width >= 20rem) {
+      width: fit-content;
     }
   }
   .\32 xs\:flex-row {
@@ -1806,6 +1885,11 @@
   .sm\:min-h-38 {
     @media (width >= 40rem) {
       min-height: calc(var(--spacing) * 38);
+    }
+  }
+  .sm\:flex-row {
+    @media (width >= 40rem) {
+      flex-direction: row;
     }
   }
   .md\:flex {
@@ -1880,6 +1964,11 @@
       width: calc(1 / 2 * 100%);
     }
   }
+  .lg\:w-\[calc\(50\%-10px\)\] {
+    @media (width >= 64rem) {
+      width: calc(50% - 10px);
+    }
+  }
   .lg\:grow {
     @media (width >= 64rem) {
       flex-grow: 1;
@@ -1890,24 +1979,19 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
-  .lg\:self-start {
-    @media (width >= 64rem) {
-      align-self: flex-start;
-    }
-  }
   .lg\:px-20 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 20);
     }
   }
-  .xl\:w-5\/12 {
-    @media (width >= 80rem) {
-      width: calc(5 / 12 * 100%);
-    }
-  }
   .xl\:w-\[calc\(50\%-10px\)\] {
     @media (width >= 80rem) {
       width: calc(50% - 10px);
+    }
+  }
+  .xl\:flex-col {
+    @media (width >= 80rem) {
+      flex-direction: column;
     }
   }
 }
@@ -1989,13 +2073,8 @@
       }
     }
   }
-  .table-container {
-    width: 100%;
-    overflow: auto;
-  }
   table {
     width: 100%;
-    white-space: nowrap;
   }
   table tr {
     border-top-style: var(--tw-border-style);
@@ -2022,6 +2101,7 @@
   table :is(th, td) {
     padding-inline: calc(var(--spacing) * 2);
     padding-block: calc(var(--spacing) * 2);
+    vertical-align: top;
     --tw-leading: calc(var(--spacing) * 7);
     line-height: calc(var(--spacing) * 7);
     @media (width >= 80rem) {
@@ -2032,13 +2112,8 @@
     text-align: left;
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
+    white-space: nowrap;
     color: var(--color-content-hover);
-  }
-  table thead th {
-    vertical-align: bottom;
-  }
-  table td {
-    vertical-align: middle;
   }
   table :is(th, td):first-child {
     padding-left: calc(var(--spacing) * 0);
@@ -2046,8 +2121,51 @@
   table :is(th, td):last-child {
     padding-right: calc(var(--spacing) * 0);
   }
-  .table-container table td {
+  table a {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-primary-hover);
+      }
+    }
+  }
+  .table-container {
+    width: 100%;
+    overflow: auto;
+  }
+  .table-container table :is(th, td) {
     height: calc(var(--spacing) * 14.25);
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  .table-responsive tr {
+    --tw-border-style: none;
+    border-style: none;
+    &:hover {
+      @media (hover: hover) {
+        background-color: transparent;
+      }
+    }
+  }
+  .table-responsive :is(th, td) {
+    padding-block: calc(var(--spacing) * 0);
+    @media (width < 20rem) {
+      display: block;
+    }
+    @media (width < 20rem) {
+      padding: calc(var(--spacing) * 0);
+    }
+    @media (width < 20rem) {
+      --tw-leading: calc(var(--spacing) * 6);
+      line-height: calc(var(--spacing) * 6);
+    }
+  }
+  .table-responsive tbody tr:not(:last-child) :is(th, td):last-child {
+    @media (width < 20rem) {
+      padding-bottom: calc(var(--spacing) * 2);
+    }
+  }
+  .table-responsive th {
+    white-space: nowrap;
   }
   form {
     display: flex;
@@ -2119,8 +2237,8 @@
     gap: calc(var(--spacing) * 5);
   }
   legend {
-    padding-bottom: calc(var(--spacing) * 5);
-    color: var(--color-neutral-dark);
+    padding-bottom: calc(var(--spacing) * 4);
+    color: var(--color-content-hover);
   }
   label {
     display: flex;
@@ -2764,10 +2882,7 @@
   .product-stock__sku {
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
-    color: color-mix(in srgb, #6a7282 60%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-content-base) 60%, transparent);
-    }
+    color: var(--color-content-soft);
   }
   .product-stock__separator {
     font-size: var(--text-sm);
@@ -2781,50 +2896,7 @@
   }
   .product-stock__tag .badge {
     background-color: var(--color-neutral-light);
-    color: color-mix(in srgb, #6a7282 60%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-content-base) 60%, transparent);
-    }
-  }
-  .order__list--link , .service__list--link {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-primary-hover);
-      }
-    }
-  }
-  #orderAccount {
-    white-space: normal;
-  }
-  #orderAccount tr {
-    --tw-border-style: none;
-    border-style: none;
-    &:hover {
-      @media (hover: hover) {
-        background-color: transparent;
-      }
-    }
-  }
-  #orderAccount :is(th, td) {
-    padding-block: calc(var(--spacing) * 0);
-    @media (width < 29.875rem) {
-      display: block;
-    }
-    @media (width < 29.875rem) {
-      padding: calc(var(--spacing) * 0);
-    }
-    @media (width < 29.875rem) {
-      --tw-leading: calc(var(--spacing) * 6);
-      line-height: calc(var(--spacing) * 6);
-    }
-  }
-  #orderAccount :is(th, td):first-child {
-    white-space: nowrap;
-  }
-  #orderAccount :is(th, td):last-child {
-    @media (width < 29.875rem) {
-      padding-bottom: calc(var(--spacing) * 2);
-    }
+    color: var(--color-content-soft);
   }
 }
 .component-list {
