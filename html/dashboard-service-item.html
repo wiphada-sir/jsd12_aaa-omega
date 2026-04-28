@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Service Dashboard - AAA Omega Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./src/assets/css/app.css">
+    <link rel="stylesheet" href="./src/assets/css/style.css">
+    <script type="text/javascript" src="./src/assets/js/script.js" defer></script>
+  </head>
+  <body class="dashboard flex">
+    <header class="fixed z-98 flex md:hidden items-center w-full rounded-b-2xl bg-white shadow-2xl/10">
+      <a class="nav-logo block text-xl text-neutral-dark hover:text-primary-hover px-5 py-4" href="./dashboard.html">LOGO</a>
+      <a class="nav-toggle button button-icon button-ghost button-content hover:text-primary-hover hover:bg-neutral-lighter" href="#navToggle"><span class="icon-material">menu</span></a>
+    </header>
+    <aside id="asideContainer" class="fixed md:relative z-99 -translate-x-full md:translate-x-0 transition-all duration-300">
+      <nav id="navContainer" class="flex flex-col w-50 h-dvh overflow-auto rounded-r-2xl bg-neutral-lighter">
+        <ul id="navHeader" class="flex justify-between items-center gap-2 p-2">
+          <li><a class="nav-logo block text-xl text-neutral-dark hover:text-primary-hover px-3 py-2" href="./dashboard.html">LOGO</a></li>
+          <li class="md:hidden"><a class="nav-toggle button button-icon button-ghost button-content" href="#navToggle"><span class="icon-material">close</span></a></li>
+        </ul>
+        <ul id="navMain" class="flex flex-col flex-1 gap-2 p-2 border-t">
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard.html"><span class="icon-material">home</span> แดชบอร์ด</a></li>
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-product.html"><span class="icon-material">storefront</span> สินค้า</a></li>
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-order.html"><span class="icon-material">shopping_cart</span> คำสั่งซื้อ</a></li>
+          <li><a class="button button-ghost justify-start w-full hover:text-primary-dark bg-white" href="./dashboard-service.html"><span class="icon-material">build</span> บริการซ่อมบำรุง</a></li>
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-account.html"><span class="icon-material">person_outline</span> รายชื่อบัญชี</a></li>
+        </ul>
+        <ul id="navFooter" class="flex flex-col gap-2 p-2 border-t">
+          <li><a class="group button button-ghost justify-start items-start w-full hover:text-white py-2 bg-white hover:bg-primary-base" href="./dashboard-admin.html"><span class="icon-material">account_circle</span>
+            <div class="flex flex-col">
+              <span class="leading-6">AAA Admin</span>
+              <span class="text-xs text-content-soft group-hover:text-content-light transition-all">ผู้ดูแลระบบ</span>
+            </div></a></li>
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-error-hover" href="./dashboard-logout.html"><span class="icon-material">logout</span> ออกจากระบบ</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="flex grow flex-col min-w-0 w-2/3 gap-10 px-5 pt-25 pb-10 md:px-10 md:py-15">
+      <section id="serviceItem" class="flex flex-row flex-wrap justify-between items-center gap-10">
+        <h1><span class="text-content-hover">รายละเอียดนัดหมาย:</span> CL20260034</h1>
+        <select class="button button-outline button-success" name="statusService">
+          <option value="" disabled hidden>เลือกสถานะ</option>
+          <option value="request_received">รับคำขอ</option>
+          <option value="scheduled" selected>นัดหมายแล้ว</option>
+          <option value="in_progress">กำลังดำเนินการ</option>
+          <option value="completed">ปิดงานแล้ว</option>
+          <option value="rescheduled">เลื่อนนัด</option>
+          <option value="cancelled">ยกเลิกงาน</option>
+        </select>
+        <table>
+          <colgroup>
+            <col class="w-px">
+            <col class="w-auto">
+          </colgroup>
+          <tbody>
+            <tr>
+              <th>ชื่อลูกค้า</th>
+              <td>บริษัท พาวเวอร์กรีน จำกัด</td>
+            </tr>
+            <tr>
+              <th>เบอร์ติดต่อ</th>
+              <td>02-999-3344</td>
+            </tr>
+            <tr>
+              <th>อีเมล</th>
+              <td>admin@powergreen.aaa</td>
+            </tr>
+            <tr>
+              <th>ที่อยู่นัดหมาย</th>
+              <td>555/55 ต.บางแก้ว อ.บางพลี จ.สมุทรปราการ 10540</td>
+            </tr>
+          </tbody>
+        </table>
+        <form>
+          <div class="input-col grow xl:w-[calc(50%-10px)] self-start">
+            <div class="input-row">
+              <div class="input-group">
+                <label for="serviceAppointmentDate">วันที่นัดหมาย
+                  <span class="badge badge-sm badge-pill badge-icon badge-outline badge-content" title="รูปแบบ: วัน/เดือน/ปี ค.ศ."><span class="icon-material">info_i</span></span></label>
+                <input type="date" id="serviceAppointmentDate" name="serviceAppointmentDate" value="2026-04-07">
+              </div>
+              <div class="input-group">
+                <label for="serviceAppointmentTime">เวลาที่นัดหมาย</label>
+                <input type="time" id="serviceAppointmentTime" name="serviceAppointmentTime" value="13:00" min="06:00" max="22:00">
+              </div>
+            </div>
+            <div class="input-row">
+              <div class="input-group">
+                <label for="serviceType">ประเภทงาน</label>
+                <select id="serviceType" name="serviceType">
+                  <option value="" disabled hidden>เลือกประเภท</option>
+                  <option value="install">ติดตั้ง</option>
+                  <option value="clean" selected>ล้างแผง</option>
+                  <option value="maintenance">ซ่อมบำรุง</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <label for="serviceTeam">ทีมช่าง</label>
+                <select id="serviceTeam" name="serviceTeam">
+                  <option value="" disabled hidden>เลือกทีม</option>
+                  <option value="team1">ทีม 1</option>
+                  <option value="team2">ทีม 2</option>
+                  <option value="team3" selected>ทีม 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-row xs:flex-row">
+              <img class="size-17" src="">
+              <div class="input-group">
+                <label for="serviceImage">รูปภาพผลงาน
+                  <span class="badge badge-sm badge-pill badge-icon badge-outline badge-content" title="รองรับไฟล์ JPG, PNG, WEBP (ไม่เกิน 5MB)"><span class="icon-material">info_i</span></span></label>
+                <input type="file" id="serviceImage" class="max-w-57.5" name="serviceImage" value="" accept="image/jpeg, image/png, image/webp">
+              </div>
+            </div>
+          </div>
+          <div class="input-col grow xl:w-[calc(50%-10px)] self-start">
+            <div class="input-group">
+              <label for="message">รายละเอียด</label>
+              <textarea id="message" class="min-h-21" rows="4" placeholder="กรอกรายละเอียด?">ล้างแผง 120 แผง</textarea>
+            </div>
+            <div class="input-group">
+              <label for="note">โน้ตภายใน</label>
+              <textarea id="note" class="min-h-21" rows="4" placeholder="กรอกข้อความตามต้องการ?"></textarea>
+            </div>
+          </div>
+          <div class="button-row">
+            <button type="reset" class="button button-soft button-content" onclick="event.preventDefault(); window.location.href='./dashboard-service.html';">ยกเลิก</button>
+            <button type="submit" class="button" onclick="event.preventDefault(); window.location.href='./dashboard-service.html';">บันทึก</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

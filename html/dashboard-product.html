@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Dashboard - AAA Omega Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./src/assets/css/app.css">
+    <link rel="stylesheet" href="./src/assets/css/style.css">
+    <script type="text/javascript" src="./src/assets/js/script.js" defer></script>
+  </head>
+  <body class="dashboard flex">
+    <header class="fixed z-98 flex md:hidden items-center w-full rounded-b-2xl bg-white shadow-2xl/10">
+      <a class="nav-logo block text-xl text-neutral-dark hover:text-primary-hover px-5 py-4" href="./dashboard.html">LOGO</a>
+      <a class="nav-toggle button button-icon button-ghost button-content hover:text-primary-hover hover:bg-neutral-lighter" href="#navToggle"><span class="icon-material">menu</span></a>
+    </header>
+    <aside id="asideContainer" class="fixed md:relative z-99 -translate-x-full md:translate-x-0 transition-all duration-300">
+      <nav id="navContainer" class="flex flex-col w-50 h-dvh overflow-auto rounded-r-2xl bg-neutral-lighter">
+        <ul id="navHeader" class="flex justify-between items-center gap-2 p-2">
+          <li><a class="nav-logo block text-xl text-neutral-dark hover:text-primary-hover px-3 py-2" href="./dashboard.html">LOGO</a></li>
+          <li class="md:hidden"><a class="nav-toggle button button-icon button-ghost button-content" href="#navToggle"><span class="icon-material">close</span></a></li>
+        </ul>
+        <ul id="navMain" class="flex flex-col flex-1 gap-2 p-2 border-t">
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard.html"><span class="icon-material">home</span> แดชบอร์ด</a></li>
+          <li><a class="button button-ghost justify-start w-full hover:text-primary-dark bg-white" href="./dashboard-product.html"><span class="icon-material">storefront</span> สินค้า</a></li>
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-order.html"><span class="icon-material">shopping_cart</span> คำสั่งซื้อ</a></li>
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-service.html"><span class="icon-material">build</span> บริการซ่อมบำรุง</a></li>
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-primary-hover" href="./dashboard-account.html"><span class="icon-material">person_outline</span> รายชื่อบัญชี</a></li>
+        </ul>
+        <ul id="navFooter" class="flex flex-col gap-2 p-2 border-t">
+          <li><a class="group button button-ghost justify-start items-start w-full hover:text-white py-2 bg-white hover:bg-primary-base" href="./dashboard-admin.html"><span class="icon-material">account_circle</span>
+            <div class="flex flex-col">
+              <span class="leading-6">AAA Admin</span>
+              <span class="text-xs text-content-soft group-hover:text-content-light transition-all">ผู้ดูแลระบบ</span>
+            </div></a></li>
+          <li><a class="button button-ghost button-content justify-start w-full hover:text-error-hover" href="./dashboard-logout.html"><span class="icon-material">logout</span> ออกจากระบบ</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="flex grow flex-col min-w-0 w-2/3 gap-10 px-5 pt-25 pb-10 md:px-10 md:py-15">
+      <section id="stat">
+        <article class="card-stat">
+          <h3 class="card-stat__title">สินค้าใกล้หมด</h3>
+          <p class="card-stat__value text-warning-base">12</p>
+          <p class="card-stat__subtext">รายการ</p>
+        </article>
+        <article class="card-stat">
+          <h3 class="card-stat__title">สินค้าใหม่เดือนนี้</h3>
+          <p class="card-stat__value">48</p>
+          <p class="card-stat__subtext">รายการ</p>
+        </article>
+        <article class="card-stat">
+          <h3 class="card-stat__title">มูลค่าสินค้าคงคลัง</h3>
+          <p class="card-stat__value">4.2</p>
+          <p class="card-stat__subtext">ล้านบาท</p>
+        </article>
+        <article class="card-stat">
+          <h3 class="card-stat__title">สินค้าทั้งหมด</h3>
+          <p class="card-stat__value">84</p>
+          <p class="card-stat__subtext">รายการ</p>
+        </article>
+      </section>
+      <section id="productList" class="flex flex-row flex-wrap justify-between items-center gap-5">
+        <h1>คลังสินค้า</h1>
+        <a class="button button-soft button-primary w-full xs:w-fit" href="./dashboard-product-add.html">เพิ่มสินค้าใหม่</a>
+        <div class="table-container">
+          <table>
+            <colgroup>
+              <col class="w-px">
+              <col class="w-auto">
+              <col class="w-px">
+              <col class="w-px">
+              <col class="w-px">
+              <col class="w-px">
+            </colgroup> 
+            <thead>
+              <tr>
+                <th scope="col"><span class="block w-15">รูปภาพ</span></th>
+                <th scope="col">ชื่อสินค้า / รหัสสินค้า</th>
+                <th scope="col" class="text-right">สต็อก</th>
+                <th scope="col" class="text-right">ราคา</th>
+                <th scope="col">หมวดหมู่</th>
+                <th scope="col" class="text-right">วันที่เพิ่มสินค้า</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img class="size-15" src=""></td>
+                <td>
+                  <a class="product-stock__name" href="./dashboard-product-edit.html">Solar Panel Mono 450W</a>
+                  <div class="product-stock__meta">
+                    <span class="product-stock__sku">SP-450-MN</span>
+                    <span class="product-stock__separator">•</span>
+                    <ul class="product-stock__tag">
+                      <li class="badge badge-soft badge-content">สินค้าขายดี</li>
+                      <li class="badge badge-soft badge-content">ประสิทธิภาพสูง</li>
+                    </ul>
+                  </div>
+                </td>
+                <td class="text-right">45</td>
+                <td class="text-right">4,800</td>
+                <td>แผงโซล่าเซลล์</td>
+                <td class="text-right">04/04/2026</td>
+              </tr>
+              <tr>
+                <td><img class="size-15" src=""></td>
+                <td>
+                  <a class="product-stock__name" href="./dashboard-product-edit.html">Hybrid Inverter 5kW</a>
+                  <div class="product-stock__meta">
+                    <span class="product-stock__sku">IV-5KW-HB</span>
+                    <span class="product-stock__separator">•</span>
+                    <ul class="product-stock__tag">
+                      <li class="badge badge-soft badge-content">มาใหม่</li>
+                      <li class="badge badge-soft badge-content">จำนวนจำกัด</li>
+                    </ul>
+                  </div>
+                </td>
+                <td class="text-right text-warning-base">12</td>
+                <td class="text-right">28,500</td>
+                <td>อินเวอร์เตอร์</td>
+                <td class="text-right">04/04/2026</td>
+              </tr>
+              <tr>
+                <td><img class="size-15" src=""></td>
+                <td>
+                  <a class="product-stock__name" href="./dashboard-product-edit.html">Aluminum Rail 4.2m</a>
+                  <div class="product-stock__meta">
+                    <span class="product-stock__sku">ACC-RL-42</span>
+                    <span class="product-stock__separator">•</span>
+                    <ul class="product-stock__tag">
+                      <li class="badge badge-soft badge-content">อุปกรณ์ติดตั้ง</li>
+                      <li class="badge badge-soft badge-content">สต็อกแน่น</li>
+                    </ul>
+                  </div>
+                </td>
+                <td class="text-right">156</td>
+                <td class="text-right">850</td>
+                <td>อุปกรณ์เสริม</td>
+                <td class="text-right">04/04/2026</td>
+              </tr>
+              <tr>
+                <td><img class="size-15" src=""></td>
+                <td>
+                  <a class="product-stock__name" href="./dashboard-product-edit.html">LiFePO4 100Ah</a>
+                  <div class="product-stock__meta">
+                    <span class="product-stock__sku">BT-100-LI</span>
+                    <span class="product-stock__separator">•</span>
+                    <ul class="product-stock__tag">
+                      <li class="badge badge-soft badge-content">พรีเมียม</li>
+                      <li class="badge badge-soft badge-content">ในสต็อก</li>
+                    </ul>
+                  </div>
+                </td>
+                <td class="text-right">24</td>
+                <td class="text-right">12,900</td>
+                <td>แบตเตอรี่</td>
+                <td class="text-right">04/04/2026</td>
+              </tr>
+              <tr>
+                <td><img class="size-15" src=""></td>
+                <td>
+                  <a class="product-stock__name" href="./dashboard-product-edit.html">On-Grid Inverter 3kW</a>
+                  <div class="product-stock__meta">
+                    <span class="product-stock__sku">IV-3KW-ON</span>
+                    <span class="product-stock__separator">•</span>
+                    <ul class="product-stock__tag">
+                      <li class="badge badge-soft badge-content">สินค้าขายดี</li>
+                      <li class="badge badge-soft badge-content">มาใหม่</li>
+                    </ul>
+                  </div>
+                </td>
+                <td class="text-right text-warning-base">18</td>
+                <td class="text-right">15,500</td>
+                <td>อินเวอร์เตอร์</td>
+                <td class="text-right">03/04/2026</td>
+              </tr>
+              <tr>
+                <td><img class="size-15" src=""></td>
+                <td>
+                  <a class="product-stock__name" href="./dashboard-product-edit.html">MC4 Connector</a>
+                  <div class="product-stock__meta">
+                    <span class="product-stock__sku">ACC-MC4-P</span>
+                    <span class="product-stock__separator">•</span>
+                    <ul class="product-stock__tag">
+                      <li class="badge badge-soft badge-content">ราคาพิเศษ</li>
+                      <li class="badge badge-soft badge-content">ในสต็อก</li>
+                    </ul>
+                  </div>
+                </td>
+                <td class="text-right">450</td>
+                <td class="text-right">45</td>
+                <td>อุปกรณ์เสริม</td>
+                <td class="text-right">03/04/2026</td>
+              </tr>
+              <tr>
+                <td><img class="size-15" src=""></td>
+                <td>
+                  <a class="product-stock__name" href="./dashboard-product-edit.html">AC Breaker 32A</a>
+                  <div class="product-stock__meta">
+                    <span class="product-stock__sku">EL-BK-32</span>
+                    <span class="product-stock__separator">•</span>
+                    <ul class="product-stock__tag">
+                      <li class="badge badge-soft badge-content">พรีเมียม</li>
+                      <li class="badge badge-soft badge-content">อุปกรณ์ติดตั้ง</li>
+                    </ul>
+                  </div>
+                </td>
+                <td class="text-right">64</td>
+                <td class="text-right">450</td>
+                <td>งานระบบ</td>
+                <td class="text-right">03/04/2026</td>
+              </tr>
+              <tr>
+                <td><img class="size-15" src=""></td>
+                <td>
+                  <a class="product-stock__name" href="./dashboard-product-edit.html">Solar Cable 4mm</a>
+                  <div class="product-stock__meta">
+                    <span class="product-stock__sku">CB-4MM-BK</span>
+                    <span class="product-stock__separator">•</span>
+                    <ul class="product-stock__tag">
+                      <li class="badge badge-soft badge-content">ประสิทธิภาพสูง</li>
+                      <li class="badge badge-soft badge-content">ในสต็อก</li>
+                    </ul>
+                  </div>
+                </td>
+                <td class="text-right">200</td>
+                <td class="text-right">2,400</td>
+                <td>สายไฟ</td>
+                <td class="text-right">02/04/2026</td>
+              </tr>
+              <tr>
+                <td><img class="size-15" src=""></td>
+                <td>
+                  <a class="product-stock__name" href="./dashboard-product-edit.html">Smart Meter</a>
+                  <div class="product-stock__meta">
+                    <span class="product-stock__sku">MT-SM-WIFI</span>
+                    <span class="product-stock__separator">•</span>
+                    <ul class="product-stock__tag">
+                      <li class="badge badge-soft badge-content">มาใหม่</li>
+                      <li class="badge badge-soft badge-content">พรีเมียม</li>
+                    </ul>
+                  </div>
+                </td>
+                <td class="text-right text-warning-base">15</td>
+                <td class="text-right">3,200</td>
+                <td>อุปกรณ์เสริม</td>
+                <td class="text-right">02/04/2026</td>
+              </tr>
+              <tr>
+                <td><img class="size-15" src=""></td>
+                <td>
+                  <a class="product-stock__name" href="./dashboard-product-edit.html">Wall Mount Battery</a>
+                  <div class="product-stock__meta">
+                    <span class="product-stock__sku">BT-WALL-5K</span>
+                    <span class="product-stock__separator">•</span>
+                    <ul class="product-stock__tag">
+                      <li class="badge badge-soft badge-content">จำนวนจำกัด</li>
+                      <li class="badge badge-soft badge-content">ประสิทธิภาพสูง</li>
+                    </ul>
+                  </div>
+                </td>
+                <td class="text-right text-warning-base">8</td>
+                <td class="text-right">48,000</td>
+                <td>แบตเตอรี่</td>
+                <td class="text-right">01/04/2026</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <nav class="pagination button-group">
+          <a class="pagination__link button button-icon button-soft button-content is-disabled" href="#pagination"><span class="icon-material">keyboard_arrow_left</span></a>
+          <a class="pagination__link button button-icon button-primary" href="#pagination">1</a>
+          <a class="pagination__link button button-icon button-soft button-content" href="#pagination">2</a>
+          <a class="pagination__link button button-icon button-soft button-content" href="#pagination">3</a>
+          <a class="pagination__link button button-icon button-soft button-content" href="#pagination">4</a>
+          <a class="pagination__link button button-icon button-soft button-content" href="#pagination"><span class="icon-material">keyboard_arrow_right</span></a>
+        </nav>
+      </section>
+    </main>
+  </body>
+</html>

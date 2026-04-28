@@ -1,7 +1,7 @@
 // Nav toggle
 document.querySelectorAll(".nav-toggle").forEach((navToggle) => {
   navToggle.addEventListener("click", () => {
-    document.getElementById("navContainer").classList.toggle("-translate-x-full");
+    document.getElementById("asideContainer").classList.toggle("-translate-x-full");
   });
 });
 
